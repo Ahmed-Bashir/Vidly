@@ -1,0 +1,14 @@
+http://blog.liyiandxuegang.com/c-enable-migrations-with-no-context-type-was-found-in-the-assembly/ (enable migration wasnt working)
+https://docs.microsoft.com/en-us/aspnet/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project (identiy class wad misisng)
+
+https://entityframework.net/knowledge-base/44747032/no-context-type-was-found-in-the-assembly-when-running-code-first-migration (No context type was found in the assembly 'Vidly' "Issue")
+
+(revert back to previous migration) https://stackoverflow.com/questions/11904571/ef-migrations-rollback-last-applied-migration
+
+https://stackoverflow.com/questions/43855004/sqlexception-invalid-object-name-movie
+
+https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-server-startup-options?view=sql-server-2017
+
+https://stackoverflow.com/questions/11904571/ef-migrations-rollback-last-applied-migration
+(date format) https://stackoverflow.com/questions/47253718/datetime-in-entity-framework
+
