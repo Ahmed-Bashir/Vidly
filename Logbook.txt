@@ -11,4 +11,5 @@ https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-servi
 
 https://stackoverflow.com/questions/11904571/ef-migrations-rollback-last-applied-migration
 (date format) https://stackoverflow.com/questions/47253718/datetime-in-entity-framework
+(rolling back to a previous migration) https://stackoverflow.com/questions/47253718/datetime-in-entity-framework
 

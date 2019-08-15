@@ -1,20 +1,22 @@
 ﻿@model Vidly.Models.Customer
 
+
 @{
     ViewBag.Title = "Detials";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-    <h2>@Model.Name</h2>
+<h2>@Model.Name</h2>
 
-    <ul>
-        <li><text>MembershipType: </text> @Model.MembershipType.MembershipTypes</li>
-        
-        
-        @if (!Model.BirthDate.IsEmpty())
-        { <li><text> Birthday:</text>@Model.BirthDate.ToString()</li>  }
-     
-    </ul>
+<ul>
+    <li><text>MembershipType: </text> @Model.MembershipType.MembershipTypes</li>
+
+
+    @if (!Model.BirthDate.IsEmpty())
+    {
+        <li><text> Birthday:</text>@Model.BirthDate.ToString()</li>}
+
+</ul>
 
 

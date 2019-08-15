@@ -170,20 +170,39 @@
     <Compile Include="Migrations\201908011456096_PopulateRestOfMembershipTypeColumn.Designer.cs">
       <DependentUpon>201908011456096_PopulateRestOfMembershipTypeColumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908020947441_addBirthdayToCustomer.cs" />
-    <Compile Include="Migrations\201908020947441_addBirthdayToCustomer.Designer.cs">
-      <DependentUpon>201908020947441_addBirthdayToCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201908020953346_addBirthdateToCustomer.cs" />
     <Compile Include="Migrations\201908020953346_addBirthdateToCustomer.Designer.cs">
       <DependentUpon>201908020953346_addBirthdateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908060818045_addMovieTable.cs" />
+    <Compile Include="Migrations\201908060818045_addMovieTable.Designer.cs">
+      <DependentUpon>201908060818045_addMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908060843347_populateGenreTable.cs" />
+    <Compile Include="Migrations\201908060843347_populateGenreTable.Designer.cs">
+      <DependentUpon>201908060843347_populateGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091058058_addGenreIdColumn.cs" />
+    <Compile Include="Migrations\201908091058058_addGenreIdColumn.Designer.cs">
+      <DependentUpon>201908091058058_addGenreIdColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908151450515_updateMovieColumn.cs" />
+    <Compile Include="Migrations\201908151450515_updateMovieColumn.Designer.cs">
+      <DependentUpon>201908151450515_updateMovieColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908151529407_changleColumnMovie.cs" />
+    <Compile Include="Migrations\201908151529407_changleColumnMovie.Designer.cs">
+      <DependentUpon>201908151529407_changleColumnMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -266,6 +285,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,11 +327,23 @@
     <EmbeddedResource Include="Migrations\201908011456096_PopulateRestOfMembershipTypeColumn.resx">
       <DependentUpon>201908011456096_PopulateRestOfMembershipTypeColumn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908020947441_addBirthdayToCustomer.resx">
-      <DependentUpon>201908020947441_addBirthdayToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908020953346_addBirthdateToCustomer.resx">
       <DependentUpon>201908020953346_addBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908060818045_addMovieTable.resx">
+      <DependentUpon>201908060818045_addMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908060843347_populateGenreTable.resx">
+      <DependentUpon>201908060843347_populateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091058058_addGenreIdColumn.resx">
+      <DependentUpon>201908091058058_addGenreIdColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908151450515_updateMovieColumn.resx">
+      <DependentUpon>201908151450515_updateMovieColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908151529407_changleColumnMovie.resx">
+      <DependentUpon>201908151529407_changleColumnMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

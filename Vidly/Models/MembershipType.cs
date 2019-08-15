@@ -14,6 +14,7 @@ namespace Vidly.Models
         [Required]
         [StringLength(255)]
 
+        [Display(Name = "MembershipType")]
         public string MembershipTypes  { get; set; }
 
         public byte DurationInMonths { get; set; }
