@@ -19,7 +19,7 @@ namespace Vidly.Models
 
         [Display(Name = "Date of birth")]
         public string BirthDate { set; get; }
-        
+
         public bool IsSubscribedToNewsLetter { get; set; }
 
         public MembershipType MembershipType { get; set; }

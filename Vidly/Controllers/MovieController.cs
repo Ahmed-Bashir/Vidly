@@ -28,6 +28,7 @@ namespace Vidly.Controllers
         public ActionResult Index()
         {
             var movie = _context.Movies.Include(m => m.Genre).ToList();
+
             return View(movie);
         }
 
@@ -42,7 +43,7 @@ namespace Vidly.Controllers
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
 
-            var movieViewModel = new MovieFormViewModel() { Movie = movie, Genres = _context.genres.ToList() };
+            var movieViewModel = new MovieFormViewModel() { Movie = movie, Genres = _context.Genres.ToList() };
 
             return View("MovieForm", movieViewModel);
         }
@@ -51,7 +52,7 @@ namespace Vidly.Controllers
         {
 
             var movie = new Movie();
-            var movieViewModel = new MovieFormViewModel() {Movie = movie, Genres = _context.genres.ToList() };
+            var movieViewModel = new MovieFormViewModel() {Movie = movie, Genres = _context.Genres.ToList() };
 
             return View("MovieForm", movieViewModel);
         }
@@ -59,6 +60,7 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
+            // as its already zero in the database!
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -77,17 +79,9 @@ namespace Vidly.Controllers
 
             }
 
-            try {
+           
 
                 _context.SaveChanges();
-
-
-            } catch (Exception e)
-            {
-                Console.WriteLine(e);
-                
-
-            }
 
 
 

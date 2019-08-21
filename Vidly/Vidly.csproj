@@ -170,29 +170,17 @@
     <Compile Include="Migrations\201908011456096_PopulateRestOfMembershipTypeColumn.Designer.cs">
       <DependentUpon>201908011456096_PopulateRestOfMembershipTypeColumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908020953346_addBirthdateToCustomer.cs" />
-    <Compile Include="Migrations\201908020953346_addBirthdateToCustomer.Designer.cs">
-      <DependentUpon>201908020953346_addBirthdateToCustomer.cs</DependentUpon>
+    <Compile Include="Migrations\201908201319547_removeGenreIdColumn.cs" />
+    <Compile Include="Migrations\201908201319547_removeGenreIdColumn.Designer.cs">
+      <DependentUpon>201908201319547_removeGenreIdColumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908060818045_addMovieTable.cs" />
-    <Compile Include="Migrations\201908060818045_addMovieTable.Designer.cs">
-      <DependentUpon>201908060818045_addMovieTable.cs</DependentUpon>
+    <Compile Include="Migrations\201908201324324_updateMovieAndGenreTable.cs" />
+    <Compile Include="Migrations\201908201324324_updateMovieAndGenreTable.Designer.cs">
+      <DependentUpon>201908201324324_updateMovieAndGenreTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908060843347_populateGenreTable.cs" />
-    <Compile Include="Migrations\201908060843347_populateGenreTable.Designer.cs">
-      <DependentUpon>201908060843347_populateGenreTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908091058058_addGenreIdColumn.cs" />
-    <Compile Include="Migrations\201908091058058_addGenreIdColumn.Designer.cs">
-      <DependentUpon>201908091058058_addGenreIdColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908151450515_updateMovieColumn.cs" />
-    <Compile Include="Migrations\201908151450515_updateMovieColumn.Designer.cs">
-      <DependentUpon>201908151450515_updateMovieColumn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908151529407_changleColumnMovie.cs" />
-    <Compile Include="Migrations\201908151529407_changleColumnMovie.Designer.cs">
-      <DependentUpon>201908151529407_changleColumnMovie.cs</DependentUpon>
+    <Compile Include="Migrations\201908211325240_populateGenreTable.cs" />
+    <Compile Include="Migrations\201908211325240_populateGenreTable.Designer.cs">
+      <DependentUpon>201908211325240_populateGenreTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -327,23 +315,14 @@
     <EmbeddedResource Include="Migrations\201908011456096_PopulateRestOfMembershipTypeColumn.resx">
       <DependentUpon>201908011456096_PopulateRestOfMembershipTypeColumn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908020953346_addBirthdateToCustomer.resx">
-      <DependentUpon>201908020953346_addBirthdateToCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908201319547_removeGenreIdColumn.resx">
+      <DependentUpon>201908201319547_removeGenreIdColumn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908060818045_addMovieTable.resx">
-      <DependentUpon>201908060818045_addMovieTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908201324324_updateMovieAndGenreTable.resx">
+      <DependentUpon>201908201324324_updateMovieAndGenreTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908060843347_populateGenreTable.resx">
-      <DependentUpon>201908060843347_populateGenreTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908091058058_addGenreIdColumn.resx">
-      <DependentUpon>201908091058058_addGenreIdColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908151450515_updateMovieColumn.resx">
-      <DependentUpon>201908151450515_updateMovieColumn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908151529407_changleColumnMovie.resx">
-      <DependentUpon>201908151529407_changleColumnMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211325240_populateGenreTable.resx">
+      <DependentUpon>201908211325240_populateGenreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
