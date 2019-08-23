@@ -60,7 +60,7 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
-            // as its already zero in the database!
+            // as its already zero in the database! thats why its complaining. it cant add a record with an ID of zero as one already exits 
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;

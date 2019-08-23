@@ -18,25 +18,15 @@ namespace Vidly.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
 
         [Display(Name = "Date of birth")]
-        public string BirthDate { set; get; }
+        [Min18YearsIfaMember]
+        public DateTime? BirthDate { set; get; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
+        
         public MembershipType MembershipType { get; set; }
 
         public byte MembershipTypeId { get; set; }
-
-
-        public Customer()
-        {
-           
-        }
-        public Customer(string name)
-        {
-            this.Name = name;
-        }
-
-
 
     }
 }
