@@ -43,7 +43,7 @@ namespace Vidly.Controllers
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(x => x.Id == id);
 
-            var movieViewModel = new MovieFormViewModel() { Movie = movie, Genres = _context.Genres.ToList() };
+            var movieViewModel = new MovieFormViewModel(movie) {Genres = _context.Genres.ToList() };
 
             return View("MovieForm", movieViewModel);
         }
@@ -51,16 +51,24 @@ namespace Vidly.Controllers
         public ActionResult New()
         {
 
-            var movie = new Movie();
-            var movieViewModel = new MovieFormViewModel() {Movie = movie, Genres = _context.Genres.ToList() };
+          
+            var movieViewModel = new MovieFormViewModel() {Genres = _context.Genres.ToList() };
 
             return View("MovieForm", movieViewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            // as its already zero in the database! thats why its complaining. it cant add a record with an ID of zero as one already exits 
+
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel(movie) {  Genres = _context.Genres.ToList() };
+                return View("MovieForm", viewModel);
+            }
+
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -78,8 +86,6 @@ namespace Vidly.Controllers
 
 
             }
-
-           
 
                 _context.SaveChanges();
 
