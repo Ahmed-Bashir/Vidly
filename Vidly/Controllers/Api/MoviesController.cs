@@ -1,9 +1,11 @@
 ﻿using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Vidly.Controllers.Dto;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
@@ -19,62 +21,61 @@ namespace Vidly.Controllers.Api
 
         // GET /api/Movies 
 
-        public IEnumerable<Movie> GetMovies()
+        public IEnumerable<MovieDto> GetMovies()
         {
 
-            return _context.Movies.ToList();
+            return _context.Movies.ToList().Select(Mapper.Map<Movie,MovieDto >);
         }
 
         // GET /api/Movies/1
 
-        public Movie GetMovies(int id)
+        public IHttpActionResult GetMovies(int id)
         {
 
-            var Movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var Movie = _context.Movies.SingleOrDefault(m => m.Id == id);
 
             if (Movie == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            return Movie;
+            return Ok(Mapper.Map<Movie, MovieDto>(Movie));
         }
 
         // POST /api/Movies
         [HttpPost]
-        public Movie CreateMovie(Movie Movie)
+        public IHttpActionResult CreateMovie(MovieDto MovieDto)
         {
             if (!ModelState.IsValid)
 
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
 
+            var movie = Mapper.Map<MovieDto, Movie>(MovieDto);
+            _context.Movies.Add(movie);
 
-            _context.Movies.Add(Movie);
+            MovieDto.Id = movie.Id;
 
             _context.SaveChanges();
 
-            return Movie;
+            return Created(new Uri(Request.RequestUri + "/"+ movie.Id), MovieDto);
         }
 
         // PUT - /api/Movies 
         [HttpPut]
 
-        public void UpdateMovie(int id, Movie Movie)
+        public void UpdateMovie(int id, MovieDto MovieDto)
         {
             if (!ModelState.IsValid)
 
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-            var MovieDb = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var MovieDb = _context.Movies.SingleOrDefault(m => m.Id == id);
 
             if (MovieDb == null)
 
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            MovieDb.Name = Movie.Name;
-            MovieDb.ReleaseDate = Movie.ReleaseDate;
-            MovieDb.Genre = Movie.Genre;
-            MovieDb.Stock = Movie.Stock;
+            Mapper.Map(MovieDto, MovieDb);
 
             _context.SaveChanges();
         }

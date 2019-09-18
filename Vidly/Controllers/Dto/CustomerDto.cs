@@ -14,9 +14,6 @@ namespace Vidly.Controllers.Dto
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
-        [Display(Name = "Date of birth")]
-        [Min18YearsIfaMember]
         public DateTime? BirthDate { set; get; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
